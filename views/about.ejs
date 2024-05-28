@@ -1,0 +1,24 @@
+<%- include('./header.ejs') %>
+<section class="cmspage main_section">
+  <div class="container ">
+    <h1>About Us</h1>
+    <div class="page-desc">
+      <div class="container">
+        <div class="row">
+          <% a.forEach( (item) => { %>
+            <div class="col-md-6">
+              <p>
+                <img src="<%=item.image.url %> " alt="" class="img-fluid" />
+              </p>
+            </div>
+            <div class="col-md-6">
+              <h1 style="text-transform: capitalize;"><%= item.Title %></h1>
+              <p style="font-family: 'Courier New', Courier, monospace;"><%= item.description %></p>
+            </div>
+            <% }) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<%- include('./footer.ejs') %>

@@ -1,0 +1,38 @@
+<%- include('../../header.ejs') %>
+    <section class="dashboard-wrap main_section">
+        <div class="container">
+            <div class="body-content">
+                <div class="row">
+                    <div class="col-md-3">
+                        <%- include('../sidebar.ejs') %>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="dash-right">
+                            <div class="dash-header">
+                                <div class="dash-title">
+                                    <h1>Slider Edit</h1>
+                                </div>
+                            </div>
+                            <!-- Edit form start  -->
+
+                            <form action="/sliderUpdate/<%= e._id %>" method="post" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="">Title</label>
+                                    <input type="text" name="title" class="form-control" value="<%= e.Title %>">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">SliderImage</label>
+                                    <input type="file" name="image" class="form-control">
+                                    <img src="<%= e.image.url %>" alt="" width="100%">
+                                </div>
+                                <button type="submit" class="btn btn-info">Update</button>
+                            </form>
+                            <!-- edit form end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('../../footer.ejs') %>

@@ -1,0 +1,101 @@
+<%- include('../../header.ejs') %>
+    <section class="dashboard-wrap  main_section">
+        <div class="container">
+            <div class="body-content">
+                <div class="row">
+                    <div class="col-md-3">
+                        <%- include('../sidebar.ejs') %>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="dash-right">
+                            <div class="dash-header">
+                                <div class="dash-title">
+                                    <h1>Blogs</h1>
+                                </div>
+                                <div class="dash-nav">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#exampleModal">
+                                        Add Blog
+                                    </button>
+                                </div>
+                            </div>
+                            <table class="table table-bordered table-striped">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th>Category</th>
+                                    <th>Posted On</th>
+                                    <th>image</th>
+                                    <th class="action">Action</th>
+                                </tr>
+                                <% b.forEach( (item) => {  %>
+                                <tr>
+                                        <td><%= parseInt(item._id)  %></td>
+                                        <td><%= item.Title %></td>
+                                        <td><%= item.description %></td>
+                                        <td><%= item.cname %></td>
+                                        <td><%= item.Posted_on %></td>
+                                        <td><img src="<%= item.image.url %>" alt="" width="100%"></td>
+                                        <td style="display: flex;">
+                                            <a href="/blogView/<%= item._id %>" class="btn btn-info">View</a>
+                                            <a href="/blogEdit/<%= item._id %>" class="btn btn-success">Edit</a>
+                                            <a href="/blogDelete/<%= item._id %>" class="btn btn-danger">Delete</a>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ------BLOG MODAL ------ -->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add blog</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/bloginsert" enctype="multipart/form-data" method="post">
+                        <div class="form-group">
+                            <label for="">Category</label>
+                            <select name="Category" id="" class="form-control">
+                                <option value="">Select Category</option>
+                                <% c.forEach((item)=>{ %>
+                                    <option value="<%= item.cname %>"><%= item.cname %></option>
+                                <% }) %>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Title</label>
+                            <input type="text" name="title" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Description</label>
+                            <textarea type="description" name="des" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Posted on</label>
+                            <input type="description" name="post_on" class="form-control"></input>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Image</label>
+                            <input type="file" name="image" class="form-control"/>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('../../footer.ejs') %>

@@ -1,0 +1,30 @@
+<%- include('./header.ejs') %>
+    <section class="banner">
+        <div class="banner-box">
+            <div class="intro-text">
+                <div class="intro-text-box">
+                    <h1 style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 65px;">ITALIAN PASTA</h1>
+                    <H3 style="font-family: Georgia, 'Times New Roman', Times, serif;">TRY IT NOW!</H3>
+                </div>
+            </div>
+            <img src="assets/images/pasta.jpg" alt="banner" />
+        </div>
+    </section>
+    <section class="featured-blog mtb-40">
+        <div class="container">
+            <div class="row">
+                <% b.forEach( (item)=> { %>
+                    <div class="col-md-4">
+                        <div class="blog-box">
+                            <img src="<%= item.image.url %>" alt="blog1" />
+                            <h3><%= item.Title %></h3>
+                            <p><%= item.createdAt.toLocaleDateString() %></p>
+                            <p><%= item.description.slice(0,100) %></p>
+                            <a href="/detail/<%= item.id %>" class="btn btn-danger">Read more...</a>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+    </section>
+    <%- include('./footer.ejs') %>

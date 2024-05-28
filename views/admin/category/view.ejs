@@ -1,0 +1,35 @@
+<%- include('../../header.ejs') %>
+    <section class="dashboard-wrap main_section">
+        <div class="container">
+            <div class="body-content">
+                <div class="row">
+                    <div class="col-md-3">
+                        <%- include('../sidebar.ejs') %>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="dash-right">
+                            <div class="dash-header">
+                                <div class="dash-title">
+                                    <h1>Category view</h1>
+                                </div>
+                            </div>
+                            <table class="table table-bordered table-striped">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cname</th>
+                                    <th>Title</th>
+                                </tr>
+                                    <tr>
+                                        <td><%= d._id %></td>
+                                        <td><%= d.cname %></td>
+                                        <td><%= d.Title %></td>
+                                    </tr>
+                                </table>
+                                <a href="/admin/category/display" class="btn btn-success">Back To Category Page</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('../../footer.ejs') %>

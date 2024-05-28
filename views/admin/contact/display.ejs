@@ -1,0 +1,39 @@
+<%- include('../../header.ejs') %>
+<section class="dashboard-wrap main_section">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <%- include('../sidebar.ejs') %>
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <div class="dash-header">
+                            <div class="dash-title">
+                                <h1>Contact</h1>
+                            </div>
+                        </div>
+                        <table class="table table-bordered table-striped">
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Message</th>
+                            </tr>
+                            <% c.forEach( (item) => { %>
+                                <tr>
+                                    <td><%= item.Name %></td>
+                                    <td><%= item.Email %></td>
+                                    <td><%= item.Phone %></td>
+                                    <td><%= item.Message %></td>
+                                </tr>
+                            <% }) %>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../../footer.ejs') %>

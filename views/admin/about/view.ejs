@@ -1,0 +1,63 @@
+<%- include('../../header.ejs') %>
+    <section class="dashboard-wrap main_section">
+        <div class="container">
+            <div class="body-content">
+                <div class="row">
+                    <div class="col-md-3">
+                        <%- include('../sidebar.ejs') %>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="dash-right">
+                            <div class="dash-header">
+                                <div class="dash-title">
+                                    <h1>About View</h1>
+                                </div>
+                                <div class="dash-nav">
+                                </div>
+                            </div>
+                            <!-- Edit form start  here -->
+                            <form action="/" method="">
+                                <div class="form-group">
+                                    <label for="">Id</label>
+                                    <input type="text" id="" class="form-control" value="<%= d._id %>" name="_id"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="title">Title</label>
+                                    <input type="text" id="title" class="form-control" value="<%= d.Title %>" name="title"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Des">Description</label>
+                                    <input type="text" name="des" class="form-control" id="Des" value="<%= d.description %>"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Blog">Category</label>
+                                    <input type="text" id="Blog" name="blogname" class="form-control" value="<%= d.cname %>"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="post">Posted on</label>
+                                    <input type="text" id="post" name="post_on" class="form-control" value="<%= d.Posted_on %>"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">Image</label>
+                                    <table>
+                                        <tr>
+                                            <td><img src="<%= d.image.url %>" alt="" width="100%"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <a href="/admin/about/display" class="btn btn-success">Back To About</a>
+                            </form>
+                            <!-- form end edit  -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('../../footer.ejs') %>
+<%- include('../../footer.ejs') %>

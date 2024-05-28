@@ -1,0 +1,35 @@
+<%- include('../../header.ejs') %>
+    <section class="dashboard-wrap main_section">
+        <div class="container">
+            <div class="body-content">
+                <div class="row">
+                    <div class="col-md-3">
+                        <%- include('../sidebar.ejs') %>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="dash-right">
+                            <div class="dash-header">
+                                <div class="dash-title">
+                                    <h1>Slider View</h1>
+                                </div>
+                            </div>
+                            <table class="table table-bordered table-striped">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Title</th>
+                                    <th>SliderImage</th>
+                                </tr>
+                                    <tr>
+                                        <td><%= v._id %></td>
+                                        <td><%= v.Title %></td>
+                                        <td><img src="<%= v.image.url %>" alt=""></td>
+                                    </tr>
+                            </table>
+                            <a href="/admin/slider/display" class="btn btn-success">Back to slider</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('../../footer.ejs') %>

@@ -1,0 +1,22 @@
+<%- include ('../header.ejs') %>
+    <section class="dashboard-wrap main_section">
+        <div class="container">
+            <div class="body-content">
+                <div class="row">
+                    <div class="col-md-3">
+                        <%- include('./sidebar.ejs') %>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="dash-right">
+                            <h1>Dashboard</h1>
+                            <h1>Welcome <%= n %></h1>
+                            <p>This is you</p>
+
+                                <img src="/assets/images/dashboard-templates.jpg.webp" alt=""   class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('../footer.ejs') %>
