@@ -1,6 +1,6 @@
 h1 {font-size: 2.4rem;margin-bottom: 30px;}
 .bg-blue {
-  background-color: #ce5a69;
+  background-color: #587a9e;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   position: fixed;
   z-index: 9999;
@@ -8,11 +8,13 @@ h1 {font-size: 2.4rem;margin-bottom: 30px;}
 }
 .navbar-brand img {
   height: 80px;
+  padding: 13px 0;
 }
 .navbar-dark .navbar-nav .nav-link {
   color: #fff;
   font-weight: bold;
   font-style: italic;
+  font-size: 20px;
   margin-right: 22px;
 }
 .banner img {
